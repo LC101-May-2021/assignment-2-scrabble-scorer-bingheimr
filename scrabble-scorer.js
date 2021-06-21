@@ -92,17 +92,17 @@ function scrabbleScore(word) {
 
 
 const scoringAlgorithms = [
-  simpleScore = {
+  simpleScorer = {
     name: "Simple Score",
     description: "Each letter is worth 1 point.",
     scoringFunction: simpleScore
   }, 
-  vowelBonusScore = {
+  vowelBonusScorer = {
     name: "Bonus Vowels",
     description: "Vowels are 3 pts, consonants are 1 pt.",
     scoringFunction: vowelBonusScore
   }, 
-  scrabbleScore = {
+  scrabbleScorer = {
     name: "Traditional Scrabble",
     description: "The traditional scoring algorithm.",
     scoringFunction: scrabbleScore
@@ -115,23 +115,21 @@ function scorerPrompt() {
 // A) If the user enters 0, have the program output a score using the simple scorer.
 
   if (scoreOption === 0) {
-    scoreOption = 
-    console.log("Algorithm name: ", scoringAlgorithms[0].name);
+    console.log(typeof(simpleScore()))
+    scoreOption = simpleScore(userWord)
     console.log("Simple Scoring Points: ", scoringAlgorithms[0].scoringFunction());
 
   }
 // B) If the user enters 1, use the vowel bonus scoring function.
 
   else if (scoreOption === 1) {
-    scoreOption = 
-    console.log("Algorithm name: ", scoringAlgorithms[1].name);
+    scoreOption = vowelBonusScore()
     console.log("Bonus Vowel Scoring Points: ", scoringAlgorithms[1].scoringFunction());
 }
 // C) If the user enters 2, use the Scrabble scoring option.
 
   else {
-    scoreOption = 
-    console.log("Algorithm name: ", scoringAlgorithms[2].name);
+    scoreOption = scrabbleScore()
     console.log("Scrabble Scoring Points: ", scoringAlgorithms[2].scoringFunction());
 }
 // D) scorerPrompt() should return the object the user has selected.
@@ -141,6 +139,7 @@ function scorerPrompt() {
 
 function runProgram() {
    initialPrompt();
+   console.log(typeof(vowelBonusScore))
    scorerPrompt(userWord);
 }
 
