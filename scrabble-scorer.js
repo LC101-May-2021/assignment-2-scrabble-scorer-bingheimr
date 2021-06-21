@@ -70,7 +70,7 @@ function transform(object) {
   object = oldPointStructure
   for (key in object){
     for (let i = 0; i < object[key].length; i++) {
-      newO[object[key][i].toLowerCase()]=[key];  
+      newO[object[key][i].toLowerCase()]=Number([key]);  
   }
 }
 return newO
