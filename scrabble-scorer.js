@@ -39,7 +39,6 @@ function oldScrabbleScorer(word) {
 
 
 function simpleScore(word) {
-  console.log(userWord)
   word = userWord.toUpperCase();
   let simpleScore=0;
   for (let i = 0; i < word.length; i++) {
@@ -115,21 +114,20 @@ function scorerPrompt() {
 // A) If the user enters 0, have the program output a score using the simple scorer.
 
   if (scoreOption === 0) {
-    console.log(typeof(simpleScore()))
-    scoreOption = simpleScore(userWord)
+    scoreOption = 
     console.log("Simple Scoring Points: ", scoringAlgorithms[0].scoringFunction());
 
   }
 // B) If the user enters 1, use the vowel bonus scoring function.
 
   else if (scoreOption === 1) {
-    scoreOption = vowelBonusScore()
+    scoreOption = 
     console.log("Bonus Vowel Scoring Points: ", scoringAlgorithms[1].scoringFunction());
 }
 // C) If the user enters 2, use the Scrabble scoring option.
 
   else {
-    scoreOption = scrabbleScore()
+    scoreOption = 
     console.log("Scrabble Scoring Points: ", scoringAlgorithms[2].scoringFunction());
 }
 // D) scorerPrompt() should return the object the user has selected.
@@ -139,8 +137,7 @@ function scorerPrompt() {
 
 function runProgram() {
    initialPrompt();
-   console.log(typeof(vowelBonusScore))
-   scorerPrompt(userWord);
+   scorerPrompt();
 }
 
 // Don't write any code below this line //
