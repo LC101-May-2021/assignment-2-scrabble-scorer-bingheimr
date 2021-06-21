@@ -84,7 +84,7 @@ function scrabbleScore(word) {
   //console.log('New Point Structure: ',newPointStructure)
 	for (let i = 0; i < word.length; i++) {
       if (word[i] in newPointStructure) {
-      scrabbleScore += parseInt(newPointStructure[word[i]]);
+      scrabbleScore += Number(newPointStructure[word[i]]);
       }
 		}
 	return (scrabbleScore*1);
