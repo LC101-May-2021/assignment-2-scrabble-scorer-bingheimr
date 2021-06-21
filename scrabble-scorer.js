@@ -79,16 +79,14 @@ return newO
 let newPointStructure = transform(oldPointStructure);
 
 function scrabbleScore(word) {
-  let points = 0
 	let scrabbleScore = 0;
-  word = userWord;
-  console.log(word)
-  console.log('New Point Structure: ',newPointStructure)
+  word = userWord.toLowerCase();
+  //console.log('New Point Structure: ',newPointStructure)
 	for (let i = 0; i < word.length; i++) {
       if (word[i] in newPointStructure) {
-      scrabbleScore += parseInt(newPointStructure[word[i]])
+      scrabbleScore += parseInt(newPointStructure[word[i]]);
       }
-		 }
+		}
 	return (scrabbleScore*1);
  }
 
@@ -105,7 +103,7 @@ const scoringAlgorithms = [
     scoringFunction: vowelBonusScore
   }, 
   scrabbleScore = {
-    name: "Scrabble",
+    name: "Traditional Scrabble",
     description: "The traditional scoring algorithm.",
     scoringFunction: scrabbleScore
   }
@@ -118,7 +116,7 @@ function scorerPrompt() {
 
   if (scoreOption === 0) {
     scoreOption = 
-    console.log("algorithm name: ", scoringAlgorithms[0].name);
+    console.log("Algorithm name: ", scoringAlgorithms[0].name);
     console.log("Simple Scoring Points: ", scoringAlgorithms[0].scoringFunction());
 
   }
@@ -126,14 +124,14 @@ function scorerPrompt() {
 
   else if (scoreOption === 1) {
     scoreOption = 
-    console.log("algorithm name: ", scoringAlgorithms[1].name);
+    console.log("Algorithm name: ", scoringAlgorithms[1].name);
     console.log("Bonus Vowel Scoring Points: ", scoringAlgorithms[1].scoringFunction());
 }
 // C) If the user enters 2, use the Scrabble scoring option.
 
   else {
     scoreOption = 
-    console.log("algorithm name: ", scoringAlgorithms[2].name);
+    console.log("Algorithm name: ", scoringAlgorithms[2].name);
     console.log("Scrabble Scoring Points: ", scoringAlgorithms[2].scoringFunction());
 }
 // D) scorerPrompt() should return the object the user has selected.
@@ -143,7 +141,6 @@ function scorerPrompt() {
 
 function runProgram() {
    initialPrompt();
-   console.log(typeof(userWord))
    scorerPrompt(userWord);
 }
 
